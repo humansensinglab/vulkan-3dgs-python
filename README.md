@@ -2,8 +2,8 @@
 
 Run cross-platform Vulkan 3D Gaussian Splatting from Python - Windows/Mac/Linux, any GPU, no NVIDIA dependency.
 
-![macOS Screenshot](media/g_macos.png)
-*Vulkan 3DGS running on MacBook Air M2*
+![macOS Screenshot](media/windows.png)
+*Vulkan 3DGS running on Windows. NVIDIA 3060 Ti*
 
 This package provides Python bindings for [3dgs-vulkan-cpp](https://github.com/AlejandroAmat/3dgs-vulkan-cpp), a high-performance Vulkan-based 3D Gaussian Splatting renderer that works on any GPU vendor (NVIDIA, AMD, Intel, Apple Silicon).
 
