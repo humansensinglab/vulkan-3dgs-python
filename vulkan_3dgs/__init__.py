@@ -1,4 +1,9 @@
 import os
+import platform
+
+if platform.system() == "Darwin":  # macOS
+    os.environ["MVK_CONFIG_USE_METAL_ARGUMENT_BUFFERS"] = "0"
+
 from .vulkan_3dgs_py import run as _run
 
 def run(path, width=None, height=None):
