@@ -2,7 +2,7 @@
 
 Run cross-platform Vulkan 3D Gaussian Splatting from Python - Windows/Mac/Linux, any GPU, no NVIDIA dependency.
 
-![macOS Screenshot](media/g_macos.png)
+![macOS Screenshot](vulkan_3dgs/csrc/3dgs-vulkan-cpp/media/g_macos.png)
 *Vulkan 3DGS running on MacBook Air M2*
 
 This package provides Python bindings for [3dgs-vulkan-cpp](https://github.com/AlejandroAmat/3dgs-vulkan-cpp), a high-performance Vulkan-based 3D Gaussian Splatting renderer that works on any GPU vendor (NVIDIA, AMD, Intel, Apple Silicon).
@@ -29,6 +29,20 @@ This package provides Python bindings for [3dgs-vulkan-cpp](https://github.com/A
 git clone --recursive https://github.com/AlejandroAmat/vulkan-3dgs-python.git
 cd vulkan-3dgs-python
 pip install -e .
+```
+
+### Use as Submodule
+If you want to integrate this into your own project:
+
+```bash
+# Add as submodule
+git submodule add https://github.com/AlejandroAmat/vulkan-3dgs-python.git third-party/vulkan-3dgs-python
+git submodule update --init --recursive
+
+# Install the submodule
+cd third-party/vulkan-3dgs-python
+pip install -e .
+cd ../..
 ```
 
 The installation will:
