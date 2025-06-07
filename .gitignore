@@ -1,0 +1,8 @@
+imgui.ini
+*egg-info
+*build
+.vscode
+*data
+*Shaders
+*pyd
+*pyc

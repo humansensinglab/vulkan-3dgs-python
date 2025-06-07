@@ -1,0 +1,3 @@
+﻿[submodule "vulkan_3dgs/csrc/3dgs-vulkan-cpp"]
+    path = vulkan_3dgs/csrc/3dgs-vulkan-cpp
+    url = https://github.com/AlejandroAmat/3dgs-vulkan-cpp.git
