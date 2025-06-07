@@ -5,6 +5,7 @@ from pathlib import Path
 import requests
 from setuptools import setup
 from setuptools.command.install import install
+from setuptools.command.develop import develop
 
 def download_sample_data():
     """Download sample 3DGS data"""
@@ -71,7 +72,16 @@ class CustomInstall(install):
         build_cmake()
         super().run()
 
+class CustomDevelop(develop):
+    def run(self):
+        download_sample_data()
+        build_cmake()  # This was missing!
+        super().run()
+
 setup(
     name="vulkan-3dgs",  
-    cmdclass={"install": CustomInstall}
+    cmdclass={
+        "install": CustomInstall,
+        "develop": CustomDevelop  # Make sure this is here
+    }
 )
