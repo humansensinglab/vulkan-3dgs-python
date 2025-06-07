@@ -72,7 +72,6 @@ The renderer expects standard 3D Gaussian Splatting PLY files. A sample file is 
 ## Platform Notes
 
 - **AMD GPUs**: Change `SUBGROUP_SIZE` to 64 in the radix sort shader if needed
-- **macOS**: For some MoltenVK versions, set `MVK_CONFIG_USE_METAL_ARGUMENT_BUFFERS=0`
 - **M3/M4 Macs**: Some color format issues may occur - being addressed
 
 ## Requirements
