@@ -57,7 +57,13 @@ def build_cmake():
     ], cwd=build_dir)
 
     import glob
-    built_modules = glob.glob(str(build_dir / "vulkan-3dgs" / "*" / "vulkan_3dgs_py.*"))
+    import platform
+
+    if platform.system() == "Darwin":  # macOS
+        built_modules = glob.glob(str(build_dir / "vulkan-3dgs" / "vulkan_3dgs_py.*"))
+    else:  
+        built_modules = glob.glob(str(build_dir / "vulkan-3dgs" / "*" / "vulkan_3dgs_py.*"))
+
     if built_modules:
         import shutil
         dest = Path("vulkan_3dgs") / Path(built_modules[0]).name
