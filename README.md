@@ -21,14 +21,12 @@ This package provides Python bindings for [3dgs-vulkan-cpp](https://github.com/A
 ### Prerequisites
 - **Vulkan SDK 1.3+** - Download from https://vulkan.lunarg.com/
 - **Python 3.8+**
-- **(only for macOS)**: Install GLFW via Homebrew: `brew install glfw`
-- **Compatible GPU** with Vulkan support
-
+  
 ### Install from Source
 ```bash
 git clone --recursive https://github.com/AlejandroAmat/vulkan-3dgs-python.git
 cd vulkan-3dgs-python
-pip install -e .
+pip install -e . 
 ```
 
 ### Use as Submodule
