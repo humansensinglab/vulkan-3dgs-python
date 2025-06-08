@@ -2,8 +2,8 @@
 
 Run cross-platform Vulkan 3D Gaussian Splatting from Python - Windows/Mac/Linux, any GPU, no NVIDIA dependency.
 
-![macOS Screenshot](media/g_macos.png)
-*Vulkan 3DGS running on MacBook Air M2*
+![macOS Screenshot](media/windows.png)
+*Vulkan 3DGS running on Windows. NVIDIA 3060 Ti*
 
 This package provides Python bindings for [3dgs-vulkan-cpp](https://github.com/AlejandroAmat/3dgs-vulkan-cpp), a high-performance Vulkan-based 3D Gaussian Splatting renderer that works on any GPU vendor (NVIDIA, AMD, Intel, Apple Silicon).
 
@@ -21,7 +21,7 @@ This package provides Python bindings for [3dgs-vulkan-cpp](https://github.com/A
 ### Prerequisites
 - **Vulkan SDK 1.3+** - Download from https://vulkan.lunarg.com/
 - **Python 3.8+**
-- **macOS**: Install GLFW via Homebrew: `brew install glfw`
+- **(only for macOS)**: Install GLFW via Homebrew: `brew install glfw`
 - **Compatible GPU** with Vulkan support
 
 ### Install from Source
@@ -29,6 +29,20 @@ This package provides Python bindings for [3dgs-vulkan-cpp](https://github.com/A
 git clone --recursive https://github.com/AlejandroAmat/vulkan-3dgs-python.git
 cd vulkan-3dgs-python
 pip install -e .
+```
+
+### Use as Submodule
+If you want to integrate this into your own project:
+
+```bash
+# Add as submodule
+git submodule add https://github.com/AlejandroAmat/vulkan-3dgs-python.git third-party/vulkan-3dgs-python
+git submodule update --init --recursive
+
+# Install the submodule
+cd third-party/vulkan-3dgs-python
+pip install -e .
+cd ../..
 ```
 
 The installation will:
@@ -72,7 +86,6 @@ The renderer expects standard 3D Gaussian Splatting PLY files. A sample file is 
 ## Platform Notes
 
 - **AMD GPUs**: Change `SUBGROUP_SIZE` to 64 in the radix sort shader if needed
-- **macOS**: For some MoltenVK versions, set `MVK_CONFIG_USE_METAL_ARGUMENT_BUFFERS=0`
 - **M3/M4 Macs**: Some color format issues may occur - being addressed
 
 ## Requirements
