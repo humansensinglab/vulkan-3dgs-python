@@ -1,13 +1,13 @@
 [build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["setuptools", "wheel", "requests"] 
+build-backend = "setuptools.build_meta" 
 
 [project]
 name = "vulkan-3dgs"
 version = "0.1.0"
 description = "Vulkan 3D Gaussian Splatting Python bindings"
 authors = [{name = "Alejandro Amat"}]
-dependencies = []
+dependencies = ["requests"] 
 
 
 [tool.setuptools.packages.find]

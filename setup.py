@@ -2,13 +2,15 @@ import os
 import subprocess
 import sys
 from pathlib import Path
-import requests
+
 from setuptools import setup
 from setuptools.command.install import install
+from setuptools.command.build_py import build_py
 from setuptools.command.develop import develop
 
 def download_sample_data():
     """Download sample 3DGS data"""
+    import requests
     data_dir = Path("vulkan_3dgs/data")
     data_dir.mkdir(exist_ok=True)
     
@@ -75,13 +77,20 @@ class CustomInstall(install):
 class CustomDevelop(develop):
     def run(self):
         download_sample_data()
-        build_cmake()  # This was missing!
+        build_cmake()
+        super().run()
+
+class CustomBuild(build_py):
+    def run(self):
+        download_sample_data()
+        build_cmake()
         super().run()
 
 setup(
     name="vulkan-3dgs",  
     cmdclass={
+        "build_py": CustomBuild, 
         "install": CustomInstall,
-        "develop": CustomDevelop  # Make sure this is here
+        "develop": CustomDevelop  
     }
 )
