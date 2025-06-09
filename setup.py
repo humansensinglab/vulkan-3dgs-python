@@ -59,9 +59,9 @@ def build_cmake():
     import glob
     import platform
 
-    if platform.system() == "Darwin":  # macOS
+    if platform.system() in ["Darwin", "Linux"]:  # macOS and Linux
         built_modules = glob.glob(str(build_dir / "vulkan-3dgs" / "vulkan_3dgs_py.*"))
-    else:  
+    else:  # Windows
         built_modules = glob.glob(str(build_dir / "vulkan-3dgs" / "*" / "vulkan_3dgs_py.*"))
 
     if built_modules:
