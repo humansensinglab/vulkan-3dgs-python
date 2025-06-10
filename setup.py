@@ -38,6 +38,9 @@ def build_cmake():
     """Build CMake project with Python bindings"""
     cmake_source_dir = Path("vulkan_3dgs/csrc/3dgs-vulkan-cpp")
     build_dir = cmake_source_dir / "build"
+    import shutil
+    if build_dir.exists():
+        shutil.rmtree(build_dir)
     build_dir.mkdir(exist_ok=True)
     
     print("Running CMake build...")
